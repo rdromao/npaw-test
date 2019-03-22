@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="searchBarContainer">
         <input
           type="text"
           onKeyPress={this.handleKeyPress}

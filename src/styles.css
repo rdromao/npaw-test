@@ -2,6 +2,25 @@
   font-family: sans-serif;
   text-align: center;
 }
+.searchBarContainer {
+  padding: 16px;
+}
+.searchBarContainer input,
+.searchBarContainer button {
+  font-size: 20px;
+  padding: 4px;
+}
+.searchBarContainer button {
+  border-radius: 0px 4px 4px 0px;
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-family: sans-serif;
+  cursor: pointer;
+}
 .resultsContainer {
   display: flex;
   flex-wrap: wrap;
