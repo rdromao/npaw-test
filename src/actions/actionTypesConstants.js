@@ -1,0 +1,3 @@
+export const GO_SEARCH = "GO_SEARCH";
+export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
+export const CHANGE_RESULTS_MODE = "CHANGE_RESULTS_MODE";
