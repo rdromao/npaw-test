@@ -22,12 +22,14 @@ export const changeResultMode = newMode => {
 };
 
 // Async actions
-export function searchAPICall() {
+export function searchAPICall(terms) {
   return dispatch => {
     dispatch(goSearch());
     /*global fetchJsonp*/
     fetchJsonp(
-      "https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=20"
+      "https://itunes.apple.com/search?term=" +
+        encodeURIComponent(terms) +
+        "&entity=album&limit=20"
     )
       .then(res => res.json())
       .then(json => dispatch(receiveSearchResults(json)));

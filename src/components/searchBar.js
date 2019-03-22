@@ -8,23 +8,46 @@ class SearchBar extends React.Component {
     this.state = { searchString: "" };
 
     this.handleSearchStringChange = this.handleSearchStringChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.searchableString = this.searchableString.bind(this);
   }
   handleSearchStringChange(e) {
     this.setState({ searchString: e.target.value });
   }
+  handleKeyPress(e) {
+    if (e.key === "Enter") {
+      this.props.searchApi(this.state.searchString);
+    }
+  }
+  searchableString() {
+    return (
+      this.state.searchString &&
+      0 !== this.state.searchString.length &&
+      /\S/.test(this.state.searchString)
+    );
+  }
   render() {
     return (
       <div>
-        <input type="text" onChange={this.handleSearchStringChange} />
-        <button onClick={this.props.searchApi}>Search</button>
+        <input
+          type="text"
+          onKeyPress={this.handleKeyPress}
+          onChange={this.handleSearchStringChange}
+        />
+        <button
+          disabled={!this.searchableString()}
+          onClick={() => this.props.searchApi(this.state.searchString)}
+        >
+          Search
+        </button>
       </div>
     );
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  searchApi: () => {
-    dispatch(searchAPICall());
+  searchApi: terms => {
+    dispatch(searchAPICall(terms));
   }
 });
 

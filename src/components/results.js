@@ -5,7 +5,7 @@ import AlbumResult from "./albumResult";
 class Results extends React.Component {
   render() {
     return (
-      <div>
+      <div className="resultsContainer">
         {this.props.albums.map(album => (
           <AlbumResult key={album.collectionId} album={album} />
         ))}

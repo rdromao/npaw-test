@@ -1,7 +1,7 @@
 {
-  "name": "new",
+  "name": "itunes-search-npaw-frontend-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tech evaluation for NPAW frontend  dev position",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
