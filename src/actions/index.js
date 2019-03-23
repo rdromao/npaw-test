@@ -21,6 +21,19 @@ export const changeResultMode = newMode => {
   };
 };
 
+export const showNotification = newNotificationMessage => {
+  return {
+    type: ACTIONS.SHOW_NOTIFICATION,
+    newNotificationMessage
+  };
+};
+
+export const hideNotification = () => {
+  return {
+    type: ACTIONS.HIDE_NOTIFICATION
+  };
+};
+
 // Async actions
 export function searchAPICall(terms) {
   return dispatch => {
@@ -29,9 +42,17 @@ export function searchAPICall(terms) {
     fetchJsonp(
       "https://itunes.apple.com/search?term=" +
         encodeURIComponent(terms) +
-        "&entity=album&limit=20"
+        "&entity=album"
     )
       .then(res => res.json())
-      .then(json => dispatch(receiveSearchResults(json)));
+      .then(json => dispatch(receiveSearchResults(json)))
+      .catch(error => {
+        dispatch(
+          showNotification(
+            "An error occured reaching the iTunes API. Try again later"
+          )
+        );
+        setTimeout(() => dispatch(hideNotification()), 3000);
+      });
   };
 }

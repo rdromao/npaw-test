@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import EphimeralNotification from "./components/ephimeralNotification";
 import SearchBar from "./components/searchBar";
 import Results from "./components/results";
 import thunkMiddleware from "redux-thunk";
@@ -19,6 +20,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
+        <EphimeralNotification />
         <h1>iTunes Search</h1>
         <SearchBar />
         <Results />

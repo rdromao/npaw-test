@@ -1,7 +1,9 @@
 import * as ACTIONS from "../actions/actionTypesConstants";
 
 const initialState = {
-  resultsMode: "grid"
+  resultsMode: "grid",
+  showNotification: false,
+  notificationMessage: ""
 };
 
 const app = (state = initialState, action) => {
@@ -10,6 +12,18 @@ const app = (state = initialState, action) => {
       return {
         ...state,
         resultsMode: action.newMode
+      };
+    case ACTIONS.SHOW_NOTIFICATION:
+      return {
+        ...state,
+        showNotification: true,
+        notificationMessage: action.newNotificationMessage
+      };
+    case ACTIONS.HIDE_NOTIFICATION:
+      return {
+        ...state,
+        showNotification: false,
+        notificationMessage: action.newNotificationMessage
       };
     default:
       return state;
