@@ -45,7 +45,13 @@ export function searchAPICall(terms) {
         "&entity=album"
     )
       .then(res => res.json())
-      .then(json => dispatch(receiveSearchResults(json)))
+      .then(json => {
+        if (json.results.length === 0) {
+          dispatch(showNotification("No results found"));
+          setTimeout(() => dispatch(hideNotification()), 3000);
+        }
+        dispatch(receiveSearchResults(json));
+      })
       .catch(error => {
         dispatch(
           showNotification(

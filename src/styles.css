@@ -10,7 +10,7 @@
   position: absolute;
   right: 16px;
   top: 32px;
-  width: 200px;
+  max-width: 200px;
   padding: 8px;
   border-radius: 4px;
 }
@@ -43,6 +43,10 @@
   color: #ffffff;
   font-family: sans-serif;
   cursor: pointer;
+}
+.searchBarContainer button:disabled,
+.searchBarContainer button[disabled] {
+  background: #6ca1e0;
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .searchBarContainer input {

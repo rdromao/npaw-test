@@ -1,5 +1,7 @@
 import React from "react";
 
+const MAX_CHARS = 30;
+
 let AlbumResult = props => (
   <div className="albumResultContainer">
     <div>
@@ -8,14 +10,14 @@ let AlbumResult = props => (
     <div className="albumInfoContainer">
       <div className="albumTitle">
         <b>Album: </b>
-        {props.album.collectionName.length > 30
-          ? props.album.collectionName.substr(0, 29) + "…"
+        {props.album.collectionName.length > MAX_CHARS
+          ? props.album.collectionName.substr(0, MAX_CHARS - 1) + "…"
           : props.album.collectionName}
       </div>
       <div className="albumArtist">
         <b>Artist: </b>
-        {props.album.artistName.length > 30
-          ? props.album.artistName.substr(0, 29) + "…"
+        {props.album.artistName.length > MAX_CHARS
+          ? props.album.artistName.substr(0, MAX_CHARS - 1) + "…"
           : props.album.artistName}
       </div>
     </div>
