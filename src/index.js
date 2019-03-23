@@ -22,6 +22,9 @@ function App() {
         <h1>iTunes Search</h1>
         <SearchBar />
         <Results />
+        <div className="appAuthor">
+          by <a href="https://github.com/rdromao">@rdromao</a>
+        </div>
       </div>
     </Provider>
   );

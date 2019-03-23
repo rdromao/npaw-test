@@ -5,10 +5,19 @@ let AlbumResult = props => (
     <div>
       <img alt={props.album.collectionName} src={props.album.artworkUrl100} />
     </div>
-    <div className="albumTitle">
-      {props.album.collectionName.length > 30
-        ? props.album.collectionName.substr(0, 29) + "…"
-        : props.album.collectionName}
+    <div className="albumInfoContainer">
+      <div className="albumTitle">
+        <b>Album: </b>
+        {props.album.collectionName.length > 30
+          ? props.album.collectionName.substr(0, 29) + "…"
+          : props.album.collectionName}
+      </div>
+      <div className="albumArtist">
+        <b>Artist: </b>
+        {props.album.artistName.length > 30
+          ? props.album.artistName.substr(0, 29) + "…"
+          : props.album.artistName}
+      </div>
     </div>
   </div>
 );

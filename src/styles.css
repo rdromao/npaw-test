@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
+
 .App {
-  font-family: sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   text-align: center;
 }
 .searchBarContainer {
@@ -7,14 +9,22 @@
 }
 .searchBarContainer input,
 .searchBarContainer button {
-  font-size: 20px;
-  padding: 4px;
+  font-size: 16px;
+  padding: 6px;
+}
+.searchBarContainer input {
+  color: #444;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 4px 0px 0px 4px;
 }
 .searchBarContainer button {
   border-radius: 0px 4px 4px 0px;
   border: none;
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   text-decoration: none;
   background: #0069ed;
   color: #ffffff;
@@ -24,14 +34,30 @@
 .resultsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 .albumResultContainer {
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin: 8px;
+  box-shadow: 4px 4px 8px #ddd;
+  margin: 16px;
   width: 200px;
 }
 .albumResultContainer img {
   width: 100%;
+}
+.albumInfoContainer {
+  padding: 8px;
+  font-size: 14px;
+}
+.albumTitle,
+.albumArtist {
+  padding: 4px;
+  text-align: left;
+}
+.appAuthor,
+.appAuthor a {
+  color: #aaa;
+  text-decoration: none;
+  margin-top: 32px;
 }
