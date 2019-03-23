@@ -31,24 +31,67 @@
   font-family: sans-serif;
   cursor: pointer;
 }
-.resultsContainer {
+.resultsToolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+.resultsToolbar .toolbarButton {
+  padding: 8px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 4px;
+}
+.resultsToolbar .toolbarButton.inactive {
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+.resultsToolbar .toolbarButton.inactive:hover {
+  opacity: 0.7;
+}
+.resultsContainer.grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.albumResultContainer {
+.resultsContainer.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultsContainer.grid .albumResultContainer {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 4px 4px 8px #ddd;
   margin: 16px;
   width: 200px;
 }
-.albumResultContainer img {
+.resultsContainer.grid .albumResultContainer img {
   width: 100%;
+}
+.resultsContainer.list .albumResultContainer img {
+  height: 100%;
+}
+.resultsContainer.list .albumResultContainer {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin: 16px;
+}
+.resultsContainer.list .albumResultContainer img {
+  border-radius: 4px 0px 0px 4px;
 }
 .albumInfoContainer {
   padding: 8px;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.resultsContainer.list .albumResultContainer .albumInfoContainer {
+  padding-left: 16px;
 }
 .albumTitle,
 .albumArtist {

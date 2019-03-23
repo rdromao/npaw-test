@@ -1,7 +1,7 @@
 import * as ACTIONS from "../actions/actionTypesConstants";
 
 const initialState = {
-  resultsMode: "GRID"
+  resultsMode: "grid"
 };
 
 const app = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const app = (state = initialState, action) => {
     case ACTIONS.CHANGE_RESULTS_MODE:
       return {
         ...state,
-        resutlsMode: action.newMode
+        resultsMode: action.newMode
       };
     default:
       return state;
